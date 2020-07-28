@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fab_options_clock_in"
+        android:icon="@drawable/ic_outline_access_time_24"
+        android:title="@string/fab_menu_clock_in" />
+
+    <item
+        android:id="@+id/fab_options_history"
+        android:icon="@drawable/ic_baseline_history_24"
+        android:title="@string/fab_menu_history" />
+</menu>
