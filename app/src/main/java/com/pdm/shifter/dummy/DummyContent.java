@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -44,7 +44,7 @@ public class DummyContent {
     }
 
     private static DummyItem createDummyItem(int position) {
-        return new DummyItem(String.valueOf(position), new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date()), position % 2 == 0 ? PunchType.OUT : PunchType.IN );
+        return new DummyItem(String.valueOf(position), new SimpleDateFormat("hh:mm a", Locale.getDefault()).format(Calendar.getInstance().getTime()), position % 2 == 0 ? PunchType.OUT : PunchType.IN);
     }
 
     /**

@@ -16,10 +16,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.pdm.shifter.TimelineAdapter;
 import com.pdm.shifter.databinding.PunchInFragmentBinding;
 import com.pdm.shifter.dummy.DummyContent;
+import com.pdm.shifter.dummy.PunchType;
+
+import java.util.ArrayList;
+import java.util.UUID;
 
 public class PunchInFragment extends Fragment {
 
     private PunchInFragmentBinding binding;
+    private TimelineAdapter timelineAdapter;
     private PunchInViewModel mViewModel;
 
     public static PunchInFragment newInstance() {
@@ -34,7 +39,16 @@ public class PunchInFragment extends Fragment {
         binding = PunchInFragmentBinding.inflate(inflater, container, false);
         RecyclerView recyclerView = binding.timelineCurrent;
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(new TimelineAdapter(DummyContent.ITEMS, getContext()));
+        timelineAdapter = new TimelineAdapter(new ArrayList<DummyContent.DummyItem>(), getContext());
+        recyclerView.setAdapter(timelineAdapter);
+
+        binding.btnPunchIn.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                timelineAdapter.addItem(new DummyContent.DummyItem(UUID.randomUUID().toString(), binding.textClock.getText().toString(), PunchType.IN));
+                return true;
+            }
+        });
         return binding.getRoot();
     }
 

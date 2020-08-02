@@ -1,7 +1,6 @@
 package com.pdm.shifter;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,6 +58,11 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
     @Override
     public int getItemCount() {
         return mValues.size();
+    }
+
+    public void addItem(DummyItem item) {
+        mValues.add(item);
+        notifyItemInserted(mValues.size() - 1);
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
