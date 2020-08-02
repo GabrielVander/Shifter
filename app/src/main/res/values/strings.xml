@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Shifter</string>
+    <string name="fab_menu_clock_in">Clock in</string>
+    <string name="fab_menu_history">History</string>
+    <string name="app_description">Manage your shift with ease</string>
+    <string name="punched_in">Punched in at</string>
+    <string name="punched_out">Punched out at</string>
+    <string name="timeline_title">Today\'s punches</string>
 </resources>
