@@ -7,24 +7,27 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.PunchInFragment">
 
+
     <Button
         android:id="@+id/btnPunchIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/punch_in_button"
+        android:layout_marginBottom="1dp"
         android:background="@drawable/round_button"
+        android:text="@string/punch_in_button"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
-        android:id="@+id/lblButtonDescription"
+        android:id="@+id/lblTimelineTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="@string/punch_in_button_description"
+        android:text="@string/timeline_title"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,5 +42,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblButtonDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/lblTimelineTitle" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
