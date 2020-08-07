@@ -2,12 +2,11 @@ package com.pdm.shifter.dummy;
 
 import androidx.annotation.NonNull;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 
@@ -43,28 +42,63 @@ public class DummyContent {
         ITEM_MAP.put(item.id, item);
     }
 
+    private static PunchType getPunchType(int position) {
+        return position % 2 == 0 ? PunchType.OUT : PunchType.IN;
+    }
+
     private static DummyItem createDummyItem(int position) {
-        return new DummyItem(String.valueOf(position), new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date()), position % 2 == 0 ? PunchType.OUT : PunchType.IN );
+        return new DummyItem(String.valueOf(position), Calendar.getInstance().getTime(), getPunchType(position));
     }
 
     /**
      * A dummy item representing a piece of content.
      */
     public static class DummyItem {
-        public final String id;
-        public final String content;
-        public final PunchType punchType;
+        public String id;
+        public Date content;
+        public PunchType punchType;
 
-        public DummyItem(String id, String content, PunchType punchType) {
+        public DummyItem() {
+        }
+
+        public DummyItem(String id, Date content, PunchType punchType) {
             this.id = id;
             this.content = content;
+            this.punchType = null;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public Date getContent() {
+            return content;
+        }
+
+        public void setContent(Date content) {
+            this.content = content;
+        }
+
+        public PunchType getPunchType() {
+            return punchType;
+        }
+
+        public void setPunchType(PunchType punchType) {
             this.punchType = punchType;
         }
 
         @NonNull
         @Override
         public String toString() {
-            return content;
+            return "DummyItem{" +
+                    "id='" + id + '\'' +
+                    ", content=" + content +
+                    ", punchType=" + punchType +
+                    '}';
         }
     }
 }
