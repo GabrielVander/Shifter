@@ -7,4 +7,5 @@
     <string name="punched_out">Punched out at</string>
     <string name="timeline_title">Today\'s punches</string>
     <string name="punch_in_button">Punch in</string>
+    <string name="punch_in_button_description">Long press the button to punch in</string>
 </resources>

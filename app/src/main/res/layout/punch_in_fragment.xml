@@ -5,7 +5,7 @@
     android:id="@+id/punch_in"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.PunchInFragment">
+    tools:context=".Fragment.PunchInFragment">
 
     <TextClock
         android:id="@+id/textClock"
@@ -19,6 +19,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/lbl_punch_in_btn_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/punch_in_button_description"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textClock" />
+
     <Button
         android:id="@+id/btnPunchIn"
         android:layout_width="wrap_content"
@@ -29,31 +39,6 @@
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textClock" />
-
-
-    <TextView
-        android:id="@+id/lblTimelineTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="@string/timeline_title"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPunchIn" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/timeline_current"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblTimelineTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/lbl_punch_in_btn_description" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,10 +1,12 @@
-package com.pdm.shifter;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.pdm.shifter.Activity;
 
 import android.os.Bundle;
 
-import com.pdm.shifter.ui.main.MainFragment;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.pdm.shifter.Fragment.MainFragment;
+import com.pdm.shifter.Fragment.TodaysPunchesFragment;
+import com.pdm.shifter.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.container, MainFragment.newInstance())
+                    .commitNow();
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.bottom_container, TodaysPunchesFragment.newInstance())
                     .commitNow();
         }
     }

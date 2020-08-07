@@ -1,13 +1,7 @@
-package com.pdm.shifter.ui.main;
+package com.pdm.shifter.ViewModel;
 
-import android.content.Context;
-import android.content.Intent;
-import android.view.View;
-
-import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModel;
 
-import com.pdm.shifter.R;
 import com.pdm.shifter.dummy.DummyContent;
 
 import java.util.List;

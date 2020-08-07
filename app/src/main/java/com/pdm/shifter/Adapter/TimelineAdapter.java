@@ -1,4 +1,4 @@
-package com.pdm.shifter;
+package com.pdm.shifter.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,10 +10,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.vipulasri.timelineview.TimelineView;
+import com.pdm.shifter.R;
 import com.pdm.shifter.dummy.DummyContent.DummyItem;
 import com.pdm.shifter.dummy.PunchType;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem}.
@@ -32,8 +35,8 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.fragment_timeline, parent, false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.fragment_timeline, parent, false);
         return new ViewHolder(view, viewType);
     }
 
@@ -41,11 +44,11 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final DummyItem item = mValues.get(position);
         holder.mItem = item;
-        holder.mContent.setText(item.content);
+        holder.mContent.setText(new SimpleDateFormat("hh:mm a", Locale.getDefault()).format(item.content));
         holder.mPunch.setText(
                 item.punchType == PunchType.IN
-                ? mContext.getResources().getString(R.string.punched_in)
-                : mContext.getResources().getString(R.string.punched_out)
+                        ? mContext.getResources().getString(R.string.punched_in)
+                        : mContext.getResources().getString(R.string.punched_out)
         );
 
     }
@@ -61,8 +64,14 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
     }
 
     public void addItem(DummyItem item) {
+        item.setPunchType(getPunchType(mValues.size() - 1));
+
         mValues.add(item);
         notifyItemInserted(mValues.size() - 1);
+    }
+
+    private PunchType getPunchType(int position) {
+        return position % 2 == 0 ? PunchType.OUT : PunchType.IN;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

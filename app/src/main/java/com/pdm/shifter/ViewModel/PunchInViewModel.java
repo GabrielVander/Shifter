@@ -1,4 +1,4 @@
-package com.pdm.shifter.ui.main;
+package com.pdm.shifter.ViewModel;
 
 import androidx.lifecycle.ViewModel;
 

@@ -5,17 +5,18 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainFragment">
+    tools:context=".Fragment.MainFragment">
 
     <TextView
         android:id="@+id/lblAppTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
         android:fontFamily="@font/reenie_beanie"
         android:text="@string/app_name"
         android:textSize="90sp"
-        app:layout_constraintBottom_toTopOf="@+id/fab_options"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,6 +24,7 @@
         android:id="@+id/lblAppDescription"
         android:layout_width="193dp"
         android:layout_height="69dp"
+        android:layout_marginTop="25dp"
         android:fontFamily="casual"
         android:text="@string/app_description"
         android:textAlignment="center"
@@ -37,37 +39,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:layout_marginTop="25dp"
         android:foregroundTint="@android:color/white"
         android:theme="@style/AppTheme"
         app:button_menu="@menu/main_fab_options_menu"
         app:fab_color="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/lblTimelineTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="@string/timeline_title"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fab_options" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/timeline_current"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblTimelineTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/lblAppDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
