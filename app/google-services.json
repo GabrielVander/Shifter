@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "3885708615",
+    "firebase_url": "https://shifter-d0369.firebaseio.com",
+    "project_id": "shifter-d0369",
+    "storage_bucket": "shifter-d0369.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3885708615:android:530c296b30bcba51c74862",
+        "android_client_info": {
+          "package_name": "com.pdm.shifter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3885708615-ev1raeuk50r0kch2m06sc366ilk9lhcg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGNwRXJ_7SAWqMDZBajBL45y-1NABF9aM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3885708615-ev1raeuk50r0kch2m06sc366ilk9lhcg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
