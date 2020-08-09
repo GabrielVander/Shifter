@@ -37,10 +37,19 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (view.getId() == R.id.fab_options_clock_in) {
-                    Toast.makeText(getContext(), R.string.punch_in_page_title, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.fab_menu_clock_in, Toast.LENGTH_SHORT).show();
                     getParentFragmentManager()
                             .beginTransaction()
                             .replace(R.id.container, PunchInFragment.newInstance())
+                            .addToBackStack("main_fragment")
+                            .commit();
+                }
+
+                if (view.getId() == R.id.fab_options_share) {
+                    Toast.makeText(getContext(), R.string.fab_menu_share, Toast.LENGTH_SHORT).show();
+                    getParentFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.container, ShareFragment.newInstance())
                             .addToBackStack("main_fragment")
                             .commit();
                 }

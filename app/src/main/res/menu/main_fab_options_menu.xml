@@ -5,7 +5,18 @@
         android:title="@string/fab_menu_clock_in" />
 
     <item
+        android:id="@+id/fab_options_share"
+        android:icon="@drawable/ic_baseline_share_24"
+        android:title="@string/fab_menu_share" />
+
+    <item
         android:id="@+id/fab_options_history"
         android:icon="@drawable/ic_baseline_history_24"
         android:title="@string/fab_menu_history" />
+
+    <item
+        android:id="@+id/fab_options_search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/fab_menu_search" />
+
 </menu>
