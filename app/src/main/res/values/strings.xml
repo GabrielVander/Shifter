@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Shifter</string>
-    <string name="fab_menu_clock_in">Clock in</string>
+    <string name="fab_menu_clock_in">Punch in</string>
     <string name="fab_menu_history">History</string>
     <string name="app_description">Manage your shift with ease</string>
     <string name="punched_in">Punched in at</string>
@@ -8,4 +8,11 @@
     <string name="timeline_title">Today\'s punches</string>
     <string name="punch_in_button">Punch in</string>
     <string name="punch_in_button_description">Long press the button to punch in</string>
+    <string name="punch_added">Punch added</string>
+    <string name="fab_menu_share">Share shift</string>
+    <string name="fab_menu_search">Search shift</string>
+    <string name="sharing_description">By enabling shift sharing a code will be generated and anyone with the code will be able to see your today\'s punches</string>
+    <string name="sharing">Sharing</string>
+    <string name="sharing_code">Sharing code</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
 </resources>
