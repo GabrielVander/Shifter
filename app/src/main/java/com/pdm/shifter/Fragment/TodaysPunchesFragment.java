@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pdm.shifter.Adapter.TimelineAdapter;
+import com.pdm.shifter.R;
 import com.pdm.shifter.ViewModel.TodaysPunchesViewModel;
 import com.pdm.shifter.databinding.TodaysPunchesFragmentBinding;
 import com.pdm.shifter.dummy.DummyContent;
@@ -59,6 +61,8 @@ public class TodaysPunchesFragment extends Fragment {
                 }
 
                 timelineAdapter.addItem(dummyItem);
+
+                Toast.makeText(getContext(), R.string.punch_added, Toast.LENGTH_SHORT).show();
             }
         });
 

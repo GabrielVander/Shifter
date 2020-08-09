@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -36,6 +37,7 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (view.getId() == R.id.fab_options_clock_in) {
+                    Toast.makeText(getContext(), R.string.punch_in_page_title, Toast.LENGTH_SHORT).show();
                     getParentFragmentManager()
                             .beginTransaction()
                             .replace(R.id.container, PunchInFragment.newInstance())
