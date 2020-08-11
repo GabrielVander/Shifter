@@ -20,9 +20,7 @@ import com.pdm.shifter.ViewModel.TodaysPunchesViewModel;
 import com.pdm.shifter.databinding.TodaysPunchesFragmentBinding;
 import com.pdm.shifter.dummy.DummyContent;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Locale;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class TodaysPunchesFragment extends Fragment {
@@ -49,16 +47,10 @@ public class TodaysPunchesFragment extends Fragment {
         getParentFragmentManager().setFragmentResultListener("punchAdded", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String key, @NonNull Bundle bundle) {
-                String punchTime = bundle.getString("punchTime");
 
                 DummyContent.DummyItem dummyItem = new DummyContent.DummyItem();
                 dummyItem.setId(UUID.randomUUID().toString());
-                assert punchTime != null;
-                try {
-                    dummyItem.setContent(new SimpleDateFormat("hh:mm:ss a", Locale.getDefault()).parse(punchTime));
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
+                dummyItem.setContent(LocalDateTime.now());
 
                 timelineAdapter.addItem(dummyItem);
 
