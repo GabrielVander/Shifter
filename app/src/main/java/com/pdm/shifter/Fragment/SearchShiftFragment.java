@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.pdm.shifter.R;
 import com.pdm.shifter.ViewModel.SearchShiftModel;
 import com.pdm.shifter.databinding.SearchShiftFragmentBinding;
 
@@ -28,6 +29,17 @@ public class SearchShiftFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         mViewModel = new ViewModelProvider(this).get(SearchShiftModel.class);
         binding = SearchShiftFragmentBinding.inflate(inflater, container, false);
+
+        binding.btnSearchShift.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getParentFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, ShiftConnectedFragment.newInstance())
+                        .addToBackStack("container")
+                        .commit();
+            }
+        });
 
         return binding.getRoot();
     }
