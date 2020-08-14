@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.joaquimley.faboptions.FabOptions;
 import com.pdm.shifter.Activity.HistoryActivity;
+import com.pdm.shifter.Activity.SearchShiftActivity;
 import com.pdm.shifter.R;
 import com.pdm.shifter.ViewModel.MainViewModel;
 import com.pdm.shifter.databinding.MainFragmentBinding;
@@ -49,6 +50,9 @@ public class MainFragment extends Fragment {
                     case R.id.fab_options_history:
                         onHistoryButton();
                         break;
+                    case R.id.fab_options_search:
+                        onSearchShiftButton();
+                        break;
                 }
             }
         });
@@ -80,6 +84,13 @@ public class MainFragment extends Fragment {
         Toast.makeText(getContext(), R.string.fab_menu_history, Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(getActivity(), HistoryActivity.class);
+        startActivity(intent);
+    }
+
+    private void onSearchShiftButton() {
+        Toast.makeText(getContext(), R.string.fab_menu_search, Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(getActivity(), SearchShiftActivity.class);
         startActivity(intent);
     }
 
