@@ -5,16 +5,47 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainFragment">
+    tools:context=".Fragment.MainFragment">
 
     <TextView
-        android:id="@+id/message"
+        android:id="@+id/lblAppTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MainFragment"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/reenie_beanie"
+        android:text="@string/app_name"
+        android:textSize="90sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblAppDescription"
+        android:layout_width="193dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="casual"
+        android:text="@string/app_description"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAppTitle" />
+
+    <com.joaquimley.faboptions.FabOptions
+        android:id="@+id/fab_options"
+        style="@style/AppTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="25dp"
+        android:foregroundTint="@android:color/white"
+        android:theme="@style/AppTheme"
+        app:button_menu="@menu/main_fab_options_menu"
+        app:fab_color="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblAppDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
