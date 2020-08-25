@@ -135,4 +135,6 @@
     <string name="hello_world">Hello Square World!</string>
     <string name="search_shift_description">Search for a particular shift by typing its code below</string>
     <string name="search_shift_sub_text">Be aware that the code must be valid and the user must have its sharing functionality enabled</string>
+    <string name="puch_added">Punch added successfully</string>
+    <string name="punch_add_error">Something went wrong. Couldn\'t add punch</string>
 </resources>
