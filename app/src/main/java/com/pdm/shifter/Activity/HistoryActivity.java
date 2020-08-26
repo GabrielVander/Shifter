@@ -8,7 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.pdm.shifter.Adapter.TimelineAdapter;
 import com.pdm.shifter.databinding.HistoryActivityBinding;
-import com.pdm.shifter.dummy.DummyContent;
+
+import java.util.ArrayList;
 
 public class HistoryActivity extends AppCompatActivity {
 
@@ -21,7 +22,7 @@ public class HistoryActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = binding.historyList;
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getBaseContext()));
-        recyclerView.setAdapter(new TimelineAdapter(DummyContent.HISTORY, this.getBaseContext()));
+        recyclerView.setAdapter(new TimelineAdapter(new ArrayList<>(), this.getBaseContext()));
 
         setContentView(binding.getRoot());
     }
