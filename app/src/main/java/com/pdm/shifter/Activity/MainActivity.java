@@ -4,14 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.IdpResponse;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.pdm.shifter.Fragment.MainFragment;
@@ -24,21 +21,16 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     ActivityResultLauncher<Intent> mLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    IdpResponse response = IdpResponse.fromResultIntent(result.getData());
-
-                    if (result.getResultCode() == RESULT_OK) {
-                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        assert user != null;
-                        Toast.makeText(MainActivity.this, getString(R.string.signed_in_as, user.getDisplayName()), Toast.LENGTH_SHORT).show();
-                        setupView();
-                    } else {
-                        Toast.makeText(MainActivity.this, R.string.sign_in_failed, Toast.LENGTH_SHORT).show();
-                    }
-
+            result -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    assert user != null;
+                    Toast.makeText(MainActivity.this, getString(R.string.signed_in_as, user.getDisplayName()), Toast.LENGTH_SHORT).show();
+                    setupView();
+                } else {
+                    Toast.makeText(MainActivity.this, R.string.sign_in_failed, Toast.LENGTH_SHORT).show();
                 }
+
             });
 
     @Override

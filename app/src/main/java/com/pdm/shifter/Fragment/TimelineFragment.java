@@ -13,7 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.pdm.shifter.Adapter.TimelineAdapter;
 import com.pdm.shifter.R;
-import com.pdm.shifter.dummy.DummyContent;
+
+import java.util.ArrayList;
 
 /**
  * A fragment representing a list of Items.
@@ -65,7 +66,7 @@ public class TimelineFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new TimelineAdapter(DummyContent.ITEMS, getContext()));
+            recyclerView.setAdapter(new TimelineAdapter(new ArrayList<>(), getContext()));
         }
         return view;
     }
